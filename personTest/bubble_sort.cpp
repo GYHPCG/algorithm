@@ -3,7 +3,7 @@
  * @Author: CGPan
  * @Date: 2022-10-27 12:31:17
  * @LastEditors: CGPan
- * @LastEditTime: 2022-10-27 13:06:47
+ * @LastEditTime: 2022-12-06 17:26:37
  */
 #include <iostream>
 /*对于排序数据13,16,17,18,16,14,15,12,25,21,26
@@ -33,25 +33,29 @@
 using namespace std;
 void bubble_sort(int arr[], int N) {
 
-    for (int i = 0; i < N; ++i) {
+    for (int i = 0; i < N - 1; ++i) {
 
         for (int j = 0; j < N - i - 1; ++j) {
 
             if (arr[j] > arr[j+1]) swap(arr[j],arr[j+1]);
         }
-     
+         cout << "第" << i+1 << "趟：" ;
+        for (int k = 0; k < N; ++k) {
+           cout << arr[k] << " ";
+        }
+        cout << "\n";
     }
 
 }
 
 int main()
 {
-    int arr[] = {13,16,17,18,16,14,15,12,25,21,26};
-    int N = 11;
+    int arr[] = {3,1,4,1,5,9,2,6};
+    int N = 8;
     bubble_sort(arr,N);
-    for (int i = 0; i < N; ++i) {
-        cout << arr[i] << " ";
-    }
+    // for (int i = 0; i < N; ++i) {
+    //     cout << arr[i] << " ";
+    // }
     cout << endl;
     return 0;
 
